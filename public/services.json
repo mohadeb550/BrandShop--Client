@@ -1,0 +1,40 @@
+[
+    {
+      "id": "1",
+      "name": "Apple",
+      "image": "https://i.ibb.co/yPSLQTZ/sumudu-mohottige-b-Igpii04-UIg-unsplash.jpg",
+      "description": "Are you ready to celebrate your love story with a touch of elegance and charm? Our 'Elegant Affair Wedding Package' is designed to make your special day truly unforgettable, without breaking the bank.",
+      "price": "1500",
+      "features":[{"package":"", "details":""},{"package":"", "details":""},{"package":"", "details":""},{"package":"", "details":""},{"package":"", "details":""}
+    ]
+    },
+    
+    {
+      "id": "2",
+      "name": "Birthday Parties",
+      "image": "https://i.ibb.co/Rbc038t/boliviainteligente-Os-HMzl-Uz-Rds-unsplash.jpg",
+      "description": "Make your next birthday celebration an unforgettable event with our 'Ultimate Birthday Bash Package'. Whether you're turning another year older or celebrating a loved one's special day, we've got all the elements you need to throw a fantastic party without the stress of planning.",
+      "price": "900",
+      "features":[{"package":"Venue Selection Assistance", "details":"We'll help you choose the perfect venue for your birthday party, whether it's a chic restaurant, a scenic outdoor space, or a cozy private setting."}, {"package":"Personalized Party Planning", "details":"Our experienced event planners will work closely with you to design a personalized party that aligns with your vision, theme, and preferences"},{"package":"Professional Photography", "details":"Capture the moments that matter with professional photography services. Our skilled photographers will document the fun and excitement of your birthday party."},{"package":"Catering and Menu Selection", "details":"Enjoy a delectable dining experience with a customized menu that suits your tastes and dietary preferences. From hors d'oeuvres to desserts, we've got you covered."},{"package":"Cake and Dessert Table", "details":"Satisfy your sweet tooth with a beautifully designed birthday cake and a dessert table filled with scrumptious treats."},{"package":"Party Coordination", "details":"On the big day, our team will handle all the logistics, ensuring that your birthday party runs smoothly and that you can focus on having a blast."}
+    ]
+    },
+
+    {
+      "id": "3",
+      "name": "Anniversaries",
+      "image": "https://i.ibb.co/w7Xf48J/zana-latif-fc81yrx-Q2-MA-unsplash.jpg",
+      "description": "Celebrate your enduring love and commitment with our 'Timeless Love Anniversary Package.' Whether you're marking a significant milestone or simply want to cherish the bond you share, our package is designed to create a memorable and romantic anniversary celebration that won't break the bank.",
+      "price": "700",
+      "features":[{"package":"Venue Selection Assistance", "details":" We'll assist you in selecting a romantic venue that perfectly suits your anniversary celebration, whether it's a cozy restaurant, a scenic garden, or an intimate private space."}, {"package":"Personalized Celebration", "details":"Your anniversary is a reflection of your unique love story. Our experienced event planners will work closely with you to design a personalized celebration that captures the essence of your relationship"},{"package":"Professional Photography", "details":"Capture the magic of your special day with professional photography services. Our skilled photographers will document the love and joy of your celebration."},{"package":"Dining Experience", "details":"Enjoy a delectable dining experience with a customized menu that caters to your tastes and preferences. From appetizers to desserts, we'll craft a memorable culinary journey for you and your guests."},{"package":"Anniversary Keepsake", "details":"Receive a special keepsake to commemorate your anniversary, ensuring that you have a lasting memory of this significant milestone."},{"package":"Event Coordination", "details":"On the day of your celebration, our dedicated team will handle all the logistical details, allowing you to focus on creating cherished memories."}
+    ]
+    }
+
+
+    
+]
+
+
+
+
+
+

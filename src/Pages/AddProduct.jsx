@@ -29,8 +29,10 @@ export default function AddProduct() {
         })
         .then(res => res.json())
         .then(data => {
+         if(data.insertedId){
           toast.success('Product Added Successfully!')
           form.reset();
+         }
         })
         .catch(error => toast.error('Something went wrong!'))
     }

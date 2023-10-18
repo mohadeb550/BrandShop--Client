@@ -5,6 +5,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import AddProduct from "../Pages/AddProduct";
 import ProductPage from "../Components/ProductPage";
 import ProductDetails from "../Components/ProductDetails";
+import Cart from "../Pages/Cart";
 
 
  const router = createBrowserRouter([
@@ -15,7 +16,9 @@ import ProductDetails from "../Components/ProductDetails";
         {path:'/add-product', element: <AddProduct/>},
         {path:'/products/:brand_name', loader:({params})=> fetch(`http://localhost:5000/products/${params.brand_name}`) ,  element: <ProductPage/>},
 
-        {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <ProductDetails/> }
+        {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <ProductDetails/> },
+
+        {path : '/my-cart', loader: () => fetch('http://localhost:5000/cart') ,  element: <Cart/>}
     ]}
   
   ]);

@@ -5,6 +5,7 @@ import { AiOutlineMinus }  from 'react-icons/ai'
 import { BsCart2, BsFacebook, BsLinkedin, BsStar, BsStarFill, BsTwitter }  from 'react-icons/bs'
 import { GiSelfLove }  from 'react-icons/gi'
 import Rating from "react-rating";
+import toast from "react-hot-toast";
 
 
 export default function ProductDetails() {
@@ -12,7 +13,25 @@ export default function ProductDetails() {
     const productSpec = useLoaderData();
 
     const {_id, name, type, price, image, rating, brandName, selectedBrand, description} = productSpec;
-   console.log(productSpec)
+
+   
+    const handleAddToCart = () => {
+       
+        fetch('http://localhost:5000/product',{
+            method: 'POST',
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify({ name, price, image})
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                toast.success('Added On Your Cart!', { duration: 2500})
+            }
+        })
+        .catch(error => toast.error('Something went wrong!'))
+    }
 
   return (
     <section className="max-w-[1300px] mx-auto px-4 my-2 md:my-14 lg:my-20 mb-10">
@@ -38,7 +57,7 @@ export default function ProductDetails() {
            <Rating className="text-orange-600 " initialRating={rating} emptySymbol={<BsStar />} fullSymbol={<BsStarFill />} />
            </div>
             <div className="flex gap-2">
-                <button className="bg-orange-600 py-2 px-10 text-white rounded font-semibold transition-all flex items-center gap-2 hover:bg-orange-700 text-sm md:text-base"> <BsCart2 className="text-xl" /> Add to Cart </button>
+                <button onClick={handleAddToCart} className="bg-orange-600 py-2 px-10 text-white rounded font-semibold transition-all flex items-center gap-2 hover:bg-orange-700 text-sm md:text-base"> <BsCart2 className="text-xl" /> Add to Cart </button>
                 <p className="flex items-center justify-center p-4 border rounded "> <GiSelfLove/> </p>
             </div>
 

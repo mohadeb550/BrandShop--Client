@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Brand ({company}) {
 
 
-    const { _id, name, brand_image, brand_name } = company;
+    const { name, brand_image, brand_name } = company;
  
 
   return (
@@ -20,7 +20,7 @@ export default function Brand ({company}) {
     </h2>
 
    <div className="flex items-center justify-center gap-4">
-  <Link to={`/service/${_id}`}> <button className="bg-orange-600 py-2 px-20 text-white/80 rounded font-semibold transition-all hover:bg-orange-700 text-sm md:text-base"> See Products </button></Link>
+  <Link to={`/products/${brand_name}`}> <button className="bg-orange-600 py-2 px-20 text-white/80 rounded font-semibold transition-all hover:bg-orange-700 text-sm md:text-base"> See Products </button></Link>
    </div>
 
   </div>

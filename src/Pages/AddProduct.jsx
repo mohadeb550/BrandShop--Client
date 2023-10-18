@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 
@@ -24,13 +25,14 @@ export default function AddProduct() {
             headers:{
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({name, type, price, image, rating, brandName, description})
+            body: JSON.stringify({name, type, price, image, rating, brandName, selectedBrand, description})
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+          toast.success('Product Added Successfully!')
+          form.reset();
         })
-        .catch(error => console.log(error))
+        .catch(error => toast.error('Something went wrong!'))
     }
 
 
@@ -41,11 +43,11 @@ export default function AddProduct() {
 
     
   return (
-    <div className="hero h-[1000px] bg-base-200 rounded pb-20">
+    <div className="hero h-[1000px] lg:h-[1100px] bg-base-200 rounded pb-20 bg-[url('https://i.ibb.co/fDCkK24/luke-chesser-3-POMg-Ljf-Yv0-unsplash.jpg')] max-w-[1300px] mx-auto px-4">
     <div className="hero-content flex-col  w-full gap-0">
 
     
-        <h1 className="text-[27px] lg:text-[32px] text-orange-600 font-bold text-center mb-4"> Add New Product !</h1>
+        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4"> Add New Product !</h1>
         {/* <img src="/11879344_Checklist.jpg" className="w-96"/> */}
 
       <div className="rounded-lg flex-shrink-0 w-full max-w-[530px]  bg-base-100">

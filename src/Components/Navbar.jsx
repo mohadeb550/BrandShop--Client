@@ -19,10 +19,10 @@ export default function Navbar() {
 
 
   const navLinks = <>
-   <li ><NavLink className={({isActive})=> isActive? 'bg-transparent font-semibold text-rose-500 pb-[2px] md:border-b border-rose-500 ': '' } to='/'> Home </NavLink></li>
-   <li ><NavLink className={({isActive})=> isActive? 'bg-transparent font-semibold text-rose-500 pb-[2px] md:border-b border-rose-500 ': '' } to='/add-product'> Add Product </NavLink></li>
-   <li ><NavLink className={({isActive})=> isActive? 'bg-transparent font-semibold text-rose-500 pb-[2px] md:border-b border-rose-500 ': '' } to='/my-cart'> My Cart </NavLink></li>
-   <li ><NavLink className={({isActive})=> isActive? 'bg-transparent font-semibold text-rose-500 pb-[2px] md:border-b border-rose-500 ': '' } to='/login'> Login </NavLink></li>
+   <li ><NavLink className={({isActive})=> isActive? ' font-semibold bg-orange-600 text-white/95 px-3 py-[3px] rounded ': '' } to='/'> Home </NavLink></li>
+   <li ><NavLink className={({isActive})=> isActive? ' font-semibold bg-orange-600 text-white/95 px-3 py-[3px] rounded ': '' } to='/add-product'> Add Product </NavLink></li>
+   <li ><NavLink className={({isActive})=> isActive? ' font-semibold bg-orange-600 text-white/95 px-3 py-[3px] rounded ': '' } to='/my-cart'> My Cart </NavLink></li>
+   <li ><NavLink className={({isActive})=> isActive? ' font-semibold bg-orange-600 text-white/95 px-3 py-[3px] rounded ': '' } to='/login'> Login </NavLink></li>
   
   </>
     
@@ -33,7 +33,7 @@ export default function Navbar() {
       //   navigate('/');
       // })
       // .catch(error => {
-
+      
       // })
     }
 

@@ -30,9 +30,9 @@ export default function Footer() {
       <label className="label">
         <span className="label-text">Enter your email address</span>
       </label> 
-      <div className="relative">
-        <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" /> 
-        <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+      <div className="relative flex">
+        <input type="text" placeholder="username@site.com" className="input  w-full pr-16" /> 
+        <button className="bg-orange-600 py-2 px-3 text-white/80 rounded font-semibold transition-all hover:bg-orange-700 text-sm md:text-base"> Subscribe </button>
       </div>
     </fieldset>
   </form>

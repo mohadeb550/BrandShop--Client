@@ -1,7 +1,44 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
 export default function AddProduct() {
+
+    const [ selectedBrand , setSelectedBrand ] = useState('');
+
+    const handleAddProduct = (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const name = form.name.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const image = form.image.value;
+        const rating = form.rating.value;
+        const brandName = form.brandName.value;
+        const description = form.description.value;
+
+
+        fetch(`http://localhost:5000/brand/${selectedBrand}`,{
+            method: "POST",
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({name, type, price, image, rating, brandName, description})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => console.log(error))
+    }
+
+
+    
+    const handleSelect = (e) => {
+        setSelectedBrand(e.target.value);
+    }
+
     
   return (
     <div className="hero h-[1000px] bg-base-200 rounded pb-20">
@@ -15,7 +52,7 @@ export default function AddProduct() {
         <div className="p-7">
 
 
-        <form >
+        <form onSubmit={handleAddProduct}>
             
           <div className="form-control">
             <label className="label">
@@ -54,6 +91,13 @@ export default function AddProduct() {
             <input type="text" placeholder="rating" className="input input-bordered" name="rating" />
           </div>
 
+          <div className="form-control mb-3">
+            <label className="label">
+              <span className="label-text"> Brand Name </span>
+            </label>
+            <input type="text" placeholder="brand name" className="input input-bordered" name="brandName" />
+          </div>
+
             <div className="form-control mb-3">
             <label className="label">
               <span className="label-text"> Description </span>
@@ -61,12 +105,14 @@ export default function AddProduct() {
             <textarea className="border p-2 rounded outline-none" name="description" rows={4} > short description of the product... </textarea>
           </div>
 
-          <select className="select select-error w-full max-w-xs">
+          <select className="select select-error w-full max-w-xs" onChange={handleSelect}>
             <option disabled selected> Brand Selection </option>
-             <option>Strapi</option>
-            <option>Ghost</option>
-            <option>Netlify CMS</option>
-            <option>Sanity</option>
+             <option value='apple'> Apple </option>
+            <option value='xiaomi'> Xiaomi </option>
+            <option value='samsung'> Samsung </option>
+            <option value='sony'> Sony</option>
+            <option value='google'> Google </option>
+            <option value='asus'> Asus </option>
             </select>
            
           </div>

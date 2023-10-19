@@ -1,8 +1,11 @@
 
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useTimer } from 'react-timer-hook';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 function Timer() {
+
+  const { darkMode } = useContext(AuthContext); 
 
     const time = new Date();
   time.setSeconds(time.getSeconds() + 600);
@@ -29,25 +32,25 @@ function Timer() {
   return (
 
       <div className="grid grid-flow-col gap-3 text-center auto-cols-max">
-  <div className="flex flex-col p-2 border text-black/80">
+  <div className={`flex flex-col p-2 border text-black/80 ${darkMode && 'text-slate-400 border-slate-500'}`}>
     <span className="countdown font-mono text-2xl">
       <span style={{"--value":days}}></span>
     </span>
     <small>Days</small>
   </div> 
-  <div className="flex flex-col p-2 border text-black/80">
+  <div className={`flex flex-col p-2 border text-black/80 ${darkMode && 'text-slate-400 border-slate-500'}`}>
     <span className="countdown font-mono text-2xl">
       <span style={{"--value":hours}}></span>
     </span>
     <small>Hours</small>
   </div> 
-  <div className="flex flex-col p-2 border text-black/80">
+  <div className={`flex flex-col p-2 border text-black/80 ${darkMode && 'text-slate-400 border-slate-500'}`}>
     <span className="countdown font-mono text-2xl">
       <span style={{"--value":minutes}}></span>
     </span>
     <small>Minutes</small>
   </div> 
-  <div className="flex flex-col p-2 border text-black/80">
+  <div className={`flex flex-col p-2 border text-black/80 ${darkMode && 'text-slate-400 border-slate-500'}`}>
     <span className="countdown font-mono text-2xl">
       <span style={{"--value":seconds}}></span>
     </span>

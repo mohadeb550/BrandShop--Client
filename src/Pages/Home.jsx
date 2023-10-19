@@ -9,10 +9,10 @@ import Timer from "../Components/Timer";
 
 export default function Home() {
 
-    const { companies } = useContext(AuthContext)
+    const { companies , darkMode } = useContext(AuthContext)
 
   return (
-    <section className="max-w-[1300px] mx-auto px-4">
+    <section className={`max-w-[1300px] mx-auto px-4 ${darkMode && 'bg-slate-800'}`}>
 
     <Banner/>
     <HotDeals/>

@@ -4,12 +4,13 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { IoMdAdd } from 'react-icons/io';
 import Rating from 'react-rating';
 import { BsCart2, BsStar, BsStarFill } from 'react-icons/bs';
 import { GiSelfLove } from 'react-icons/gi';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 
@@ -18,6 +19,7 @@ import { GiSelfLove } from 'react-icons/gi';
 function UpcomingProducts() {
 
     const [ deals , setDeals ] = useState([]); 
+    const { darkMode } = useContext(AuthContext);
     
     useEffect(()=> {
       fetch(`/upcoming.json`)
@@ -28,8 +30,8 @@ function UpcomingProducts() {
 
 
   return (
-    <div className="autoplay-slider my-5 lg:my-32  mx-auto md:border px-4 py-5">
-        <h1 className="text-[24px] text-center  text-black/60 font-bold border-b mb-5 pb-6"> Upcoming Products </h1>
+    <div className={`autoplay-slider my-5 lg:my-32  mx-auto md:border px-4 py-5 ${darkMode && 'text-slate-400 border-slate-600'}`}>
+        <h1 className={`text-[24px] text-center  text-black/60 font-bold border-b mb-5 pb-6 ${darkMode && 'text-slate-500 border-b-slate-500'}`}> Upcoming Products </h1>
 
 
 
@@ -38,7 +40,7 @@ function UpcomingProducts() {
        {deals.map(deal => {
         return (
           <>
-           <div className='flex flex-col justify-center items-center gap-3 mx-2 border-r'>
+           <div className={`flex flex-col justify-center items-center gap-3 mx-2 border-r ${darkMode && 'border-r-slate-600'}`}>
 
             
        <div className="flex flex-col">
@@ -50,9 +52,8 @@ function UpcomingProducts() {
 
  <div className="flex flex-col gap-2 p-4">
      <h2 className="text-sm md:text-[16px] font-semibold"> {deal.name} </h2>
-     <h3 className="text-[20px] text-orange-500 font-semibold flex items-center gap-2"> {`$${deal.price}`} <small className='text-black/50'>(expected)</small> </h3>
+     <h3 className="text-[20px] text-orange-500 font-semibold flex items-center gap-2"> {`$${deal.price}`} <small className={`text-black/50 ${darkMode && 'text-slate-500'}`}>(expected)</small> </h3>
     
-
  </div>
 </div>
 

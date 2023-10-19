@@ -2,13 +2,13 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { IoMdAdd } from 'react-icons/io';
 import Rating from 'react-rating';
 import { BsCart2, BsStar, BsStarFill } from 'react-icons/bs';
-import { GiSelfLove } from 'react-icons/gi';
 import Timer from './Timer';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 
@@ -16,7 +16,8 @@ import Timer from './Timer';
 
 function HotDeals() {
 
-    const [ deals , setDeals ] = useState([]); 
+    const [ deals , setDeals ] = useState([]);
+    const { darkMode } = useContext(AuthContext); 
     
     useEffect(()=> {
       fetch(`/hot_deals.json`)
@@ -59,18 +60,16 @@ function HotDeals() {
   };
 
   return (
-    <div className="autoplay-slider my-6 lg:my-32  mx-auto bg-gray-100 px-4 py-5">
-        <h1 className="text-[20px]  text-orange-500 font-bold border-b py-2"> DEALS OF THE DAY</h1>
+    <div className={`autoplay-slider my-6 lg:my-32  mx-auto bg-gray-100 px-4 py-5 ${darkMode && 'bg-slate-700 text-slate-300'}`}>
+        <h1 className={`text-[20px]  text-orange-500 font-bold border-b py-2 ${darkMode && 'border-b-slate-500'}`}> DEALS OF THE DAY</h1>
         <Timer/>
       <Slider {...settings}>
 
        {deals.map(deal => {
         return (
           <>
-           <div className='bg-white flex flex-col justify-center items-center gap-3 mx-2 h-[630px] md:h-[350px]'>
-            
-
-
+           <div className={`lg:bg-white flex flex-col justify-center items-center gap-3 mx-2 h-[670px] md:h-[350px] ${darkMode && 'lg:bg-slate-800/90'}`}>
+          
             
        <div className="flex flex-col md:flex-row justify-around gap-4 md:gap-12 lg:gap-8">
 
@@ -86,7 +85,7 @@ function HotDeals() {
      <h2 className="text-[18px] font-semibold"> {deal.name} </h2>
      <h3 className="text-[20px] text-orange-500 font-semibold"> {`$${deal.price}`} </h3>
 
-     <div className="flex items-center justify-around text-lg lg:text-2xl py-1 px-2 border w-32 lg:w-44">
+     <div className={`flex items-center justify-around text-lg lg:text-2xl py-1 px-2 border w-32 lg:w-44 ${darkMode && 'border-slate-500'}`}>
          <AiOutlineMinus className=""/>
          <p className="border-l border-r py-0 px-3"> 1</p>
          <IoMdAdd/>

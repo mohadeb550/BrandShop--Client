@@ -10,6 +10,7 @@ export default function PrivateRoute({children}) {
   const location = useLocation();
  
   if(!currentUser){
+    toast.error('Please Login!')
     return <Navigate state={location.pathname} to='/login'/>;
   }
 

@@ -13,6 +13,7 @@ export default function AuthProvider({children}) {
     const [ dataLoading, setDataLoading ] = useState(true);
     const [ authLoading , setAuthLoading ] = useState(true);
     const [ currentUser ,setCurrentUser ] = useState(null);
+    const [ darkMode, setDarkMode ] = useState(false);
   
 
     useEffect(()=>{
@@ -23,6 +24,10 @@ export default function AuthProvider({children}) {
         setDataLoading(false)
      })
     },[])
+
+    // useEffect(()=>{
+    //   setDarkMode(JSON.parse(localStorage.getItem('dark')));
+    // },[])
 
      // sign up with email & password 
      const createUser = (email, password) => {
@@ -62,7 +67,7 @@ export default function AuthProvider({children}) {
 
 
 
-    const authInfo = { companies, createUser , loginWithGoogle, loginWithGithub ,loginUser, logOut ,currentUser }
+    const authInfo = { companies, createUser , loginWithGoogle, loginWithGithub ,loginUser, logOut ,currentUser,  darkMode, setDarkMode  }
 
     if(dataLoading || authLoading ){return  <span className="loading loading-spinner text-black/70 w-9 md:w-10 absolute top-[13%] left-2/4"></span>}
 

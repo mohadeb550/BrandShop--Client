@@ -30,7 +30,7 @@ export default function Product({product}) {
 
    <div className="flex gap-3 justify-center flex-grow">
 
-    <Link to={`/details/${selectedBrand}/${_id}`}> <button className="bg-orange-600 py-[5px] px-8 text-white rounded font-semibold transition-all hover:bg-orange-700 text-sm md:text-base"> Details </button></Link>
+    <Link to={`/details/${selectedBrand}/${_id}`}> <button className="bg-orange-600 py-[5px] px-8 text-white rounded font-semibold transition-all hover:bg-orange-700 text-sm md:text-base"> See Details </button></Link>
   
     <Link to={`/update-product/${selectedBrand}/${_id}`}> <button className="bg-lime-600 py-[5px] px-8 text-white rounded font-semibold transition-all hover:bg-lime-700 text-sm md:text-base"> Update </button></Link>
    </div>

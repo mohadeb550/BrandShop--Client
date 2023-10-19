@@ -38,11 +38,11 @@ function AdsSlider() {
     <div className="autoplay-slider mb-14 mx-auto" >
       <Slider {...settings}>
 
-       {sliderData.map(feedback => {
+       {sliderData.map(banner => {
         return (
-           <div key={feedback.id} className='bg-gray-100 flex flex-col justify-center items-center gap-3 h-52 md:h-64 lg:h-96'>
+           <div key={banner.id} className='bg-gray-100 flex flex-col justify-center items-center gap-3 h-52 md:h-64 lg:h-96'>
          
-          <img className='w-full h-full object-cover' src={feedback.image}/>
+          <img className='w-full h-full object-cover' src={banner.image}/>
     
         </div>
 

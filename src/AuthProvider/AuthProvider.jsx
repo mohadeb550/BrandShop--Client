@@ -20,7 +20,7 @@ export default function AuthProvider({children}) {
 
     const authInfo = { companies }
 
-    if(dataLoading){return  <span className="loading loading-spinner text-red-400 w-9 md:w-10 absolute top-[13%] left-2/4"></span>}
+    if(dataLoading){return  <span className="loading loading-spinner text-black/70 w-9 md:w-10 absolute top-[13%] left-2/4"></span>}
 
   return (
     <AuthContext.Provider value={authInfo}>

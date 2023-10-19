@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import Brands from "../Components/Brands";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import HotDeals from "../Components/HotDeals";
+import UpcomingProducts from "../Components/UpcomingProducts";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
     <Banner/>
     <HotDeals/>
     <Brands companies={companies} />
+    <UpcomingProducts/>
     </section>
   )
 }

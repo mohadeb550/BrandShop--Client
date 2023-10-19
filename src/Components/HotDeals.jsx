@@ -8,6 +8,7 @@ import { IoMdAdd } from 'react-icons/io';
 import Rating from 'react-rating';
 import { BsCart2, BsStar, BsStarFill } from 'react-icons/bs';
 import { GiSelfLove } from 'react-icons/gi';
+import Timer from './Timer';
 
 
 
@@ -59,7 +60,8 @@ function HotDeals() {
 
   return (
     <div className="autoplay-slider my-6 lg:my-32  mx-auto bg-gray-100 px-4 py-5">
-        <h1 className="text-[20px]  text-black/70 font-bold border-b py-2"> DEALS OF THE DAY</h1>
+        <h1 className="text-[20px]  text-orange-500 font-bold border-b py-2"> DEALS OF THE DAY</h1>
+        <Timer/>
       <Slider {...settings}>
 
        {deals.map(deal => {

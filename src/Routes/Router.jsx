@@ -7,6 +7,9 @@ import ProductPage from "../Components/ProductPage";
 import ProductDetails from "../Components/ProductDetails";
 import Cart from "../Pages/Cart";
 import UpdateProduct from "../Components/UpdateProduct";
+import Login from "../Pages/Login";
+import SignUp from "../Pages/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 
  const router = createBrowserRouter([
@@ -14,13 +17,15 @@ import UpdateProduct from "../Components/UpdateProduct";
     {path: "/", element: <Root/>, errorElement: <ErrorPage/>,  children:[
 
         {path:'/', element : <Home/>},
-        {path:'/add-product', element: <AddProduct/>},
+        {path: '/login', element: <Login/>},
+        {path:'/sign-up', element: <SignUp/>},
+        {path:'/add-product', element: <PrivateRoute> <AddProduct/> </PrivateRoute>},
         {path:'/products/:brand_name', loader:({params})=> fetch(`http://localhost:5000/products/${params.brand_name}`) ,  element: <ProductPage/>},
 
-        {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <ProductDetails/> },
+        {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute>  <ProductDetails/> </PrivateRoute> },
 
-        {path : '/my-cart', loader: () => fetch('http://localhost:5000/cart') ,  element: <Cart/>},
-        {path: '/update-product/:selected_brand/:id', loader: ({params}) => fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <UpdateProduct/>}
+        {path : '/my-cart', loader: () => fetch('http://localhost:5000/cart') ,  element: <PrivateRoute> <Cart/> </PrivateRoute> },
+        {path: '/update-product/:selected_brand/:id', loader: ({params}) => fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute> <UpdateProduct/> </PrivateRoute> }
     ]}
   
   ]);

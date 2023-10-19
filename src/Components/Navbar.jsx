@@ -2,20 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
 // 
 import toast from "react-hot-toast";
-import { TbLogout} from 'react-icons/tb'
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 
 export default function Navbar() {
-
-  // const { currentUser , logOut } = useContext(AuthContext);
-  const [ currentUser , setCurrentUser ] = useState(false)
-  const navigate = useNavigate();
-
-  useEffect(()=>{
   
-  },[])
-
+  const { currentUser , logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
 
   const navLinks = <>
@@ -27,14 +21,14 @@ export default function Navbar() {
   </>
     
     const signOut = () => {
-      // logOut()
-      // .then(result => {
-      //   toast.success('Logged Out !')
-      //   navigate('/');
-      // })
-      // .catch(error => {
-      
-      // })
+      logOut()
+      .then(result => {
+        toast.success('Logged Out !')
+        navigate('/');
+      })
+      .catch(error => {
+        toast.error('Something went wrong')
+      })
     }
 
   return (
@@ -65,12 +59,12 @@ export default function Navbar() {
         {currentUser && <h4 className="font-semibold"> {currentUser?.displayName || 'User'}</h4>}
         
         <div className="z-30 lg:w-10 rounded-full p-[2px] border border-gray-500">
-          <img tabIndex={0} src={currentUser?.photoURL || '/avatar.jpg' } className="dropdown w-7 md:w-9 cursor-pointer rounded-full" />
+          <img tabIndex={0} src={currentUser?.photoURL || '/user-black.png' } className="dropdown w-7 md:w-9 cursor-pointer rounded-full" />
 
           {currentUser && 
          <ul tabIndex={0} className="dropdown-content p-2 shadow bg-base-100 rounded w-52 flex items-center">
          <li className="cursor-pointer transition-all hover:bg-gray-200 p-1 rounded " onClick={()=> signOut() }> Log out</li> 
-          <MdOutlineLogout className="text-yellow-600"/> 
+          {/* <MdOutlineLogout className="text-yellow-600"/>  */}
         </ul>}
         </div>
      

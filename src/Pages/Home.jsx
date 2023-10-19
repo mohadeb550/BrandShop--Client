@@ -4,6 +4,7 @@ import Brands from "../Components/Brands";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import HotDeals from "../Components/HotDeals";
 import UpcomingProducts from "../Components/UpcomingProducts";
+import Timer from "../Components/Timer";
 
 
 export default function Home() {

@@ -45,20 +45,20 @@ export default function Cart() {
         <table
           className="min-w-full border text-center text-sm font-light dark:border-neutral-500">
           <thead className="border-b font-medium dark:border-neutral-500">
-            <tr className="bg-orange-500 text-white/95 text-base">
+            <tr className="bg-orange-500 text-white/95 text-[12px] md:text-base">
               <th
                 scope="col"
-                className="border-r px-6 py-0 lg:py-4 dark:border-neutral-500">
+                className="border-r px-6 py-0 md:py-2 lg:py-4 dark:border-neutral-500">
                 Images
               </th>
               <th
                 scope="col"
-                className="border-r px-6 py-0 lg:py-4 dark:border-neutral-500">
+                className="border-r px-6 py-0 md:py-2 lg:py-4 dark:border-neutral-500">
                 Product
               </th>
               <th
                 scope="col"
-                className="border-r px-6 py-0 lg:py-4 dark:border-neutral-500">
+                className="border-r px-6 py-0 md:py-2 lg:py-4 dark:border-neutral-500">
                 Unit Price
               </th>
               <th scope="col" className="px-6 py-0 lg:py-4"> Remove </th>
@@ -69,17 +69,17 @@ export default function Cart() {
           {items.map(item =>  <tr key={item._id} className="border-b dark:border-neutral-500">
               <td
                 className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500 flex items-center justify-center">
-                <img src={item.image} className="w-12 h-12 md:w-24 md:h-24 object-cover" />
+                <img src={item.image} className="w-[52px] h-[52px] md:w-24 md:h-24 object-cover" />
               </td>
               <td
-                className="whitespace-nowrap border-r font-medium text-gray-600 px-6 py-4 dark:border-neutral-500">
+                className=" border-r font-medium text-sm md:text-lg  text-gray-600 text-start md:text-center px-6 py-4 dark:border-neutral-500">
                 {item.name}
               </td>
               <td
-                className="whitespace-nowrap font-medium border-r px-6 py-4 dark:border-neutral-500">
+                className="whitespace-nowrap font-medium  text-sm md:text-lg border-r px-6 py-4 dark:border-neutral-500">
                 {`${item.price}$`}
               </td>
-              <td className="whitespace-nowrap px-6 py-4"> <button onClick={()=> handleDeleteItem(item._id)} className="bg-red-500 py-3 px-4 text-white rounded font-semibold transition-all hover:bg-red-600 text-sm md:text-base"> 
+              <td className="whitespace-nowrap px-6 py-4"> <button onClick={()=> handleDeleteItem(item._id)} className="bg-red-500 p-1 md:py-3 md:px-4 text-white rounded font-semibold transition-all hover:bg-red-600 text-sm md:text-base"> 
               <RxCross2 className="text-xl"/> </button> </td>
             </tr>)}
          

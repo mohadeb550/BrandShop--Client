@@ -10,7 +10,7 @@ export default function Product({product}) {
   return (
     <div className="block rounded-lg w-full bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
    <div className="p-6 flex items-center justify-center">
-   <img className="rounded-t-lg p-5 border-b w-72 h-72 object-cover"  src={image} />
+   <img className="rounded-t-lg p-5 border-b w-72 h-72 object-contain"  src={image} />
    </div>
   
   <div className="p-6">
@@ -32,7 +32,7 @@ export default function Product({product}) {
 
     <Link to={`/details/${selectedBrand}/${_id}`}> <button className="bg-orange-600 py-[5px] px-8 text-white rounded font-semibold transition-all hover:bg-orange-700 text-sm md:text-base"> Details </button></Link>
   
-    <button className="bg-lime-600 py-[5px] px-8 text-white rounded font-semibold transition-all hover:bg-lime-700 text-sm md:text-base"> Update </button>
+    <Link to={`/update-product/${selectedBrand}/${_id}`}> <button className="bg-lime-600 py-[5px] px-8 text-white rounded font-semibold transition-all hover:bg-lime-700 text-sm md:text-base"> Update </button></Link>
    </div>
   </div>
 </div>

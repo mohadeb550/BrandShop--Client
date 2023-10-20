@@ -49,7 +49,7 @@ export default function Login() {
     <div className="hero-content flex-col w-full">
 
       <div className="text-center lg:text-left">
-        <h1 className="text-3xl lg:text-[32px] text-white/90  px-24 py-3 font-bold text-center">Login now!</h1>
+        <h1 className="text-3xl lg:text-[32px] text-white/90  px-24 py-3 font-bold text-center font-play">Login now!</h1>
       </div>
 
       <div className="rounded-md flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

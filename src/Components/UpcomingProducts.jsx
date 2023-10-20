@@ -31,7 +31,7 @@ function UpcomingProducts() {
 
   return (
     <div className={`autoplay-slider my-5 lg:my-32  mx-auto md:border px-4 py-5 ${darkMode && 'text-slate-400 border-slate-600'}`}>
-        <h1 className={`text-[24px] text-center  text-black/60 font-bold border-b mb-5 pb-6 ${darkMode && 'text-slate-500 border-b-slate-500'}`}> Upcoming Products </h1>
+        <h1 className={`text-[24px] text-center font-play  text-black/60 font-bold border-b mb-5 pb-6 ${darkMode && 'text-slate-500 border-b-slate-500'}`}> Upcoming Products </h1>
 
 
 

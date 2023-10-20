@@ -70,7 +70,7 @@ export default function SignUp() {
     <div className="hero-content flex-col w-full gap-0">
 
     <div className="text-center lg:text-left pt-5 rounded-l-lg">
-        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4"> Create New Account !</h1>
+        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4 font-play"> Create New Account !</h1>
       </div>
 
       <div className="rounded flex-shrink-0 w-full max-w-sm  bg-base-100">

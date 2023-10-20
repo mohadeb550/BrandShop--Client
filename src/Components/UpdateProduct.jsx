@@ -26,7 +26,7 @@ export default function UpdateProduct () {
         const brandName = form.brandName.value;
  
 
-        fetch(`http://localhost:5000/${selectedBrand}/${_id}`,{
+        fetch(`https://brands-shop-server.vercel.app/${selectedBrand}/${_id}`,{
             method: "PATCH",
             headers:{
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ export default function UpdateProduct () {
     <div className="hero-content flex-col  w-full gap-0">
 
     
-        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4"> Edit Your Product !</h1>
+        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4 font-play"> Edit Your Product !</h1>
         {/* <img src="/11879344_Checklist.jpg" className="w-96"/> */}
 
       <div className="rounded-lg flex-shrink-0 w-full max-w-[530px]  bg-base-100">

@@ -5,6 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      play: ['Play', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
     extend: {
       darkMode: 'class',
     },

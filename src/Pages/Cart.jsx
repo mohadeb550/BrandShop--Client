@@ -17,7 +17,7 @@ export default function Cart() {
     },[items])
 
     const handleDeleteItem = (id) => {
-      fetch(`http://localhost:5000/item/${id}`,{
+      fetch(`https://brands-shop-server.vercel.app/item/${id}`,{
         method: 'DELETE'
       })
       .then(res => res.json())
@@ -34,7 +34,7 @@ export default function Cart() {
    <section className="max-w-[1300px] mx-auto px-4 my-2 md:my-6 lg:my-10 mb-10"> 
 
    <div className="flex justify-center items-center mb-6">
-   <h2 className="text-2xl md:text-3xl font-extrabold text-red-500 "> Your Cart </h2>
+   <h2 className="text-2xl md:text-3xl font-extrabold text-red-500  "> Your Cart </h2>
    <img src="/pngwing.com (5).png" className="w-14 md:w-24"/>
    </div>
 
@@ -69,7 +69,7 @@ export default function Cart() {
           {items.map(item =>  <tr key={item._id} className="border-b dark:border-neutral-500">
               <td
                 className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500 flex items-center justify-center">
-                <img src={item.image} className="w-[52px] h-[52px] md:w-24 md:h-24 object-cover" />
+                <img src={item.image} className="w-[52px] h-[52px] md:w-24 md:h-24 object-contain" />
               </td>
               <td
                 className=" border-r font-medium text-sm md:text-lg  text-gray-600 text-start md:text-center px-6 py-4 dark:border-neutral-500">

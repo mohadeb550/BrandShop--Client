@@ -20,12 +20,12 @@ import PrivateRoute from "./PrivateRoute";
         {path: '/login', element: <Login/>},
         {path:'/sign-up', element: <SignUp/>},
         {path:'/add-product', element: <PrivateRoute> <AddProduct/> </PrivateRoute>},
-        {path:'/products/:brand_name', loader:({params})=> fetch(`http://localhost:5000/products/${params.brand_name}`) ,  element: <ProductPage/>},
+        {path:'/products/:brand_name', loader:({params})=> fetch(`https://brands-shop-server.vercel.app/products/${params.brand_name}`) ,  element: <ProductPage/>},
 
-        {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute>  <ProductDetails/> </PrivateRoute> },
+        {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`https://brands-shop-server.vercel.app/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute>  <ProductDetails/> </PrivateRoute> },
 
-        {path : '/my-cart', loader: () => fetch('http://localhost:5000/cart') ,  element: <PrivateRoute> <Cart/> </PrivateRoute> },
-        {path: '/update-product/:selected_brand/:id', loader: ({params}) => fetch(`http://localhost:5000/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute> <UpdateProduct/> </PrivateRoute> }
+        {path : '/my-cart', loader: () => fetch('https://brands-shop-server.vercel.app/cart') ,  element: <PrivateRoute> <Cart/> </PrivateRoute> },
+        {path: '/update-product/:selected_brand/:id', loader: ({params}) => fetch(`https://brands-shop-server.vercel.app/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute> <UpdateProduct/> </PrivateRoute> }
     ]}
   
   ]);

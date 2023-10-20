@@ -1,8 +1,14 @@
-# React + Vite
+BrandShop Live
+Live : [https://brandshop-ece48.web.app](https://brandshop-ece48.web.app)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+7 Feature of the project !
 
-Currently, two official plugins are available:
+-  You can enable Dark Mode.
+-  You can add many products to the Cart.
+-  You can add a new product from the 'Add Product' section.
+-  You can update the details of products.
+-  You can see the latest discount offers on the home page.
+-  User Registration and Profiles.
+-  You can view the specification of each product.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+

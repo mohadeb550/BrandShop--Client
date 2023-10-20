@@ -20,7 +20,7 @@ export default function AddProduct() {
         const description = form.description.value;
 
 
-        fetch(`http://localhost:5000/brand/${selectedBrand}`,{
+        fetch(`https://brands-shop-server.vercel.app/brand/${selectedBrand}`,{
             method: "POST",
             headers:{
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ export default function AddProduct() {
     <div className="hero-content flex-col  w-full gap-0">
 
     
-        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4"> Add New Product !</h1>
+        <h1 className="text-[27px] lg:text-[32px] text-white/90 font-bold text-center mb-4 font-play "> Add New Product !</h1>
         {/* <img src="/11879344_Checklist.jpg" className="w-96"/> */}
 
       <div className="rounded-lg flex-shrink-0 w-full max-w-[530px]  bg-base-100">

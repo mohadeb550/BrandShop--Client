@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate, } from "react-router-dom";
 // 
 import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -12,6 +12,7 @@ export default function Navbar() {
   
   const { currentUser , logOut,  darkMode, setDarkMode  } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
 
   const navLinks = <>
@@ -30,12 +31,12 @@ export default function Navbar() {
       })
       .catch(error => {
         toast.error('Something went wrong')
+
       })
     }
 
     const handleDarkMode = () => {
-      setDarkMode(!darkMode);
-      localStorage.setItem('dark', JSON.stringify(darkMode));
+     setDarkMode(!darkMode);
     }
 
   return (
@@ -45,7 +46,7 @@ export default function Navbar() {
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className={`menu-sm dropdown-content mt-2 p-2 shadow bg-base-100 rounded w-52 ${darkMode && 'bg-slate-800'}`}>
+      <ul tabIndex={0} className={`menu-sm dropdown-content mt-2 p-2 shadow bg-base-100 rounded w-52 font-play ${darkMode && 'bg-slate-800'}`}>
         {navLinks}
       </ul>
 
@@ -53,20 +54,22 @@ export default function Navbar() {
     </div>
     <div className="flex items-center gap-1">
     <img src='/pngwing.com (3).png' className="w-9 md:w-12 lg:w-16"/>
-    <p className="text-base  md:text-xl lg:text-2xl font-semibold text-rose-600"> BrandShop</p>
+    <p className="text-base  md:text-xl lg:text-2xl font-semibold text-red-600 font-play"> Brand<span className="text-orange-500">Shop</span> </p>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="flex items-center gap-10 menu-horizontal px-1">
+    <ul className="flex items-center gap-10 menu-horizontal px-1 font-play ">
       {navLinks}
     </ul>
   </div>
 
-  <div onClick={handleDarkMode} className={`cursor-pointer border py-[2px] px-2 rounded-full space-x-2 ${darkMode && 'border-slate-500'}`}>
 
-      {darkMode? <p className={`text-sm font-semibold text-gray-500 ${darkMode && 'text-slate-400'}`}> Light </p> : <p className="text-sm font-semibold text-gray-500"> Dark </p>}
-     <button className={`text-xl outline-none`}> {darkMode? <BsFillBrightnessHighFill className="text-orange-600" /> : <MdBrightness2/> } </button>
-      </div>
+    {pathname === '/' &&   <div onClick={handleDarkMode} className={`cursor-pointer border py-[2px] px-2 rounded-full space-x-2 ${darkMode && 'border-slate-500'}`}>
+
+{darkMode? <p className={`text-sm font-semibold text-gray-500 ${darkMode && 'text-slate-400'}`}> Light </p> : <p className="text-sm font-semibold text-gray-500"> Dark </p>}
+<button className={`text-xl outline-none`}> {darkMode? <BsFillBrightnessHighFill className="text-orange-600" /> : <MdBrightness2/> } </button>
+</div>
+}
 
   <div className="dropdown dropdown-end flex items-center justify-center gap-2 z-50" data-aos ="fade-left">
     

@@ -17,7 +17,7 @@ export default function AuthProvider({children}) {
   
 
     useEffect(()=>{
-        fetch('http://localhost:5000/companies')
+        fetch('https://brands-shop-server.vercel.app/companies')
         .then(res => res.json())
         .then(data => { 
         setCompanies(data)
@@ -69,7 +69,7 @@ export default function AuthProvider({children}) {
 
     const authInfo = { companies, createUser , loginWithGoogle, loginWithGithub ,loginUser, logOut ,currentUser,  darkMode, setDarkMode  }
 
-    if(dataLoading || authLoading ){return  <span className="loading loading-spinner text-black/70 w-9 md:w-10 absolute top-[13%] left-2/4"></span>}
+    if(dataLoading || authLoading ){return  <span className="loading loading-spinner text-black/70 w-9 md:w-10 absolute top-[6%] md:top-[8%] left-2/4"></span>}
 
   return (
     <AuthContext.Provider value={authInfo}>

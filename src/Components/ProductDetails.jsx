@@ -17,7 +17,7 @@ export default function ProductDetails() {
    
     const handleAddToCart = () => {
        
-        fetch('http://localhost:5000/product',{
+        fetch('https://brands-shop-server.vercel.app/product',{
             method: 'POST',
             headers:{
                 'content-type' : 'application/json'
@@ -44,7 +44,7 @@ export default function ProductDetails() {
 
         <div className="flex flex-col gap-5 flex-1">
             <p className="text-red-500 py-1 text-sm px-3 border w-32 border-red-500"> {44} In Stock </p>
-            <h2 className="text-4xl font-semibold"> {name} </h2>
+            <h2 className="text-[28px] lg:text-4xl font-semibold font-play"> {name} </h2>
             <h4 className=""> {description } </h4>
             <h3 className="text-[25px] font-semibold"> {`$${price}`} </h3>
 

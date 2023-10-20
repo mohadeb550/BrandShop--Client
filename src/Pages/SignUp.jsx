@@ -43,7 +43,6 @@ export default function SignUp() {
            updateProfile(auth.currentUser, {displayName: name, photoURL: photo})
             e.target.reset();
             navigate('/');
-            setRender(!render)
             toast.success('Successfully Account Created!',{duration: 3000});
         })
         .catch(error =>  {

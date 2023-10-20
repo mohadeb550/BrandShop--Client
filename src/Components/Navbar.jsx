@@ -74,14 +74,16 @@ export default function Navbar() {
   <div className="dropdown dropdown-end flex items-center justify-center gap-2 z-50" data-aos ="fade-left">
     
         {!currentUser && <Link to='/login'><button className={`font-semibold  text-sm md:text-[16px] p-1 px-3 rounded bg-gray-50 hover:bg-gray-100 ${darkMode && 'bg-slate-700 hover:bg-slate-700/75'}`}> Login </button></Link>}
-        {currentUser && <h4 className="font-semibold"> {currentUser?.displayName || 'User'}</h4>}
         
-        <div className="z-30 lg:w-10 rounded-full p-[2px] border border-gray-500">
+        <div className="z-30 lg:w-10 rounded-full p-[2px] border border-gray-500 mr-2">
           <img tabIndex={0} src={currentUser?.photoURL || '/user-black.png' } className="dropdown w-7 md:w-9 cursor-pointer rounded-full" />
 
           {currentUser && 
-         <ul tabIndex={0} className={`dropdown-content p-2 shadow bg-base-100 rounded w-52 flex items-center ${darkMode && 'bg-slate-800'}`}>
+         <ul tabIndex={0} className={`dropdown-content p-2 shadow bg-base-100 rounded w-52  ${darkMode && 'bg-slate-800'}`}>
+          {currentUser && <li className="font-semibold text-sm border p-2 rounded text-orange-500 flex items-center gap-2"> {currentUser?.displayName || 'User'}  <img tabIndex={0} src={currentUser?.photoURL || '/user-black.png' } className="w-7 md:w-8 rounded-full" /></li>}
+
          <li className="cursor-pointer transition-all p-1 rounded " onClick={()=> signOut() }> Log out</li> 
+
         </ul>}
         </div>
      

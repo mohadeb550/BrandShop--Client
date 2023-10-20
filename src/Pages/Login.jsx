@@ -45,7 +45,7 @@ export default function Login() {
 
 
   return(
-    <div className="hero h-[600px] pb-32 md:pb-0 md:h-[700px] max-w-[1300px] mx-auto px-4 bg-base-200 bg-[url('codioful-formerly-gradienta-n2XqPm7Bqhk-unsplash.jpg')]">
+    <div className="hero h-[600px] pb-32 md:pb-0 md:h-[700px] max-w-[1300px] mx-auto px-4 bg-base-200 bg-[url('/codioful-formerly-gradienta-n2XqPm7Bqhk-unsplash.jpg')]">
     <div className="hero-content flex-col w-full">
 
       <div className="text-center lg:text-left">

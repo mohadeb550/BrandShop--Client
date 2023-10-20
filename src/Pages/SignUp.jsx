@@ -66,7 +66,7 @@ export default function SignUp() {
 
 
   return (
-    <div className="hero h-[700px] md:h-[720px] max-w-[1300px] mx-auto px-4 bg-[url('thomas-lefebvre-mT1uxKaegSQ-unsplash.jpg')]">
+    <div className="hero h-[700px] md:h-[720px] max-w-[1300px] mx-auto px-4 bg-[url('/thomas-lefebvre-mT1uxKaegSQ-unsplash.jpg')]">
     <div className="hero-content flex-col w-full gap-0">
 
     <div className="text-center lg:text-left pt-5 rounded-l-lg">

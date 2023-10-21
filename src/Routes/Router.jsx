@@ -12,6 +12,7 @@ import SignUp from "../Pages/SignUp";
 import PrivateRoute from "./PrivateRoute";
 
 
+
  const router = createBrowserRouter([
 
     {path: "/", element: <Root/>, errorElement: <ErrorPage/>,  children:[
@@ -24,7 +25,7 @@ import PrivateRoute from "./PrivateRoute";
 
         {path: '/details/:selected_brand/:id', loader: ({params})=> fetch(`https://brands-shop-server.vercel.app/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute>  <ProductDetails/> </PrivateRoute> },
 
-        {path : '/my-cart', loader: () => fetch('https://brands-shop-server.vercel.app/cart') ,  element: <PrivateRoute> <Cart/> </PrivateRoute> },
+        {path : '/my-cart', element: <PrivateRoute> <Cart/> </PrivateRoute> },
         {path: '/update-product/:selected_brand/:id', loader: ({params}) => fetch(`https://brands-shop-server.vercel.app/details/${params.selected_brand}/${params.id}`) , element: <PrivateRoute> <UpdateProduct/> </PrivateRoute> }
     ]}
   

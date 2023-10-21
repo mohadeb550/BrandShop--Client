@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom"
 import { IoMdAdd }  from 'react-icons/io'
 import { AiOutlineMinus }  from 'react-icons/ai'
@@ -6,11 +6,14 @@ import { BsCart2, BsFacebook, BsLinkedin, BsStar, BsStarFill, BsTwitter }  from 
 import { GiSelfLove }  from 'react-icons/gi'
 import Rating from "react-rating";
 import toast from "react-hot-toast";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 export default function ProductDetails() {
 
     const productSpec = useLoaderData();
+    const { currentUser } = useContext(AuthContext);
+    const email = currentUser.email;
 
     const {_id, name, type, price, image, rating, brandName, selectedBrand, description} = productSpec;
 
@@ -22,7 +25,7 @@ export default function ProductDetails() {
             headers:{
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify({ name, price, image})
+            body: JSON.stringify({ name, price, image , email })
         })
         .then(res => res.json())
         .then(data => {

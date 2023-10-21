@@ -1,14 +1,23 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { RxCross2} from "react-icons/rx";
-import { useLoaderData } from "react-router-dom"
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 
 
 export default function Cart() {
-  const cartItems = useLoaderData();
 
-  const [ items , setItems ] = useState(cartItems)
+  const [ items , setItems ] = useState([])
   const [ total , setTotal ] = useState(0);
+  const { currentUser } = useContext(AuthContext);
+ 
+
+
+  useEffect(()=> {
+    fetch(`https://brands-shop-server.vercel.app/cart/${currentUser.email}`)
+    .then(res => res.json())
+    .then(data => setItems(data))
+  },[])
 
    
     useEffect(()=> {
@@ -66,7 +75,7 @@ export default function Cart() {
           </thead>
           <tbody>
           
-          {items.map(item =>  <tr key={item._id} className="border-b dark:border-neutral-500">
+          {items?.map(item =>  <tr key={item._id} className="border-b dark:border-neutral-500">
               <td
                 className="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500 flex items-center justify-center">
                 <img src={item.image} className="w-[52px] h-[52px] md:w-24 md:h-24 object-contain" />

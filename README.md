@@ -10,5 +10,6 @@ Live : [https://brandshop-ece48.web.app](https://brandshop-ece48.web.app)
 -  You can see the latest discount offers on the home page.
 -  User Registration and Profiles.
 -  You can view the specification of each product.
-
+  
+<h5> Technology :</h5> <p>React, tailwind css, firebase, html</p>
 
